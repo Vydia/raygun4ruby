@@ -20,7 +20,7 @@ require "raygun/services/apply_whitelist_filter_to_payload"
 require "raygun/breadcrumbs/breadcrumb"
 require "raygun/breadcrumbs/store"
 require "raygun/breadcrumbs"
-require "raygun/railtie" if defined?(Rails)
+require "raygun/railtie" if defined?(Rails::Railtie)
 
 module Raygun
 

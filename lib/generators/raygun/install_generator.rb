@@ -5,7 +5,7 @@ module Raygun
 
     desc "This generator creates a configuration file for the Raygun ruby adapter inside config/initializers"
     def create_configuration_file
-      filter_parameters = if defined?(Rails)
+      filter_parameters = if defined?(Rails) && Rails.responds_to?(:application)
                             "config.filter_parameters = Rails.application.config.filter_parameters"
                           else
                             "config.filter_parameters = [ :password, :card_number, :cvv ] # don't forget to filter out sensitive parameters"
